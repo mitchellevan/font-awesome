@@ -89,6 +89,22 @@ th {
   text-align: left;
 }
 
+td span {
+  font-weight: 700;
+}
+
+span.pass {
+  color: hsl(129, 88%, 26%);
+}
+
+span.bug {
+  color: hsl(40, 100%, 26%);
+}
+
+span.fail {
+  color: hsl(8, 100%, 43%);
+}
+
 /* TODO: Check contrast for colour blindness */
 tr:nth-child(even) th {
   background: hsl(120, 69%, 75%);

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Results table tests</title>
+    <link rel="stylesheet" href="core.css">
+  </head>
+  <body>
+    <main>
+      <h1>Different styles for result tables</h1>
+      <article>
+        <h2>Current</h2>
+        <p>Current implementation has separate columns for AT, Browser, OS, Expected result, Actual result, and caret navigation result.</p>
+
+        <h3>Results</h3>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">AT</th>
+              <th scope="col">Browser</th>
+              <th scope="col">OS</th>
+              <th scope="col">Expected Result</th>
+              <th scope="col">Actual Result</th>
+              <th scope="col">Caret navigation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">VoiceOver</th>
+              <td>Safari 9</td>
+              <td>OS X 10.10</td>
+              <td>Icon is spoken as “love, image”</td>
+              <td>Icon is spoken as “love, image”</td>
+              <td>Icon is spoken as “love, image”</td>
+            </tr>
+            <tr>
+              <th scope="row">Orca</th>
+              <td>Firefox 42</td>
+              <td>Ubuntu 14.04</td>
+              <td>Icon is spoken as “love, image”</td>
+              <td>Icon is spoken as “love image”</td>
+              <td>Icon is spelled as “l-o-v-e image”</td>
+            </tr>
+            <tr>
+              <th scope="row">VoiceOver Braille display</th>
+              <td>Yandex 15</td>
+              <td>OS X 10.9</td>
+              <td>Icon is not rendered</td>
+              <td>Icon is not rendered</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h2>Combined first rows</h2>
+        <p>Combine columns for AT, Browser, and OS. Makes more sense in tables mode (might be too verbose).</p>
+
+        <h3>Results</h3>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">AT, Browser, and OS</th>
+              <th scope="col">Expected Result</th>
+              <th scope="col">Actual Result</th>
+              <th scope="col">Caret navigation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">VoiceOver with Safari 9 on OS X 10.10</th>
+              <td>Icon is spoken as “love, image”</td>
+              <td>Icon is spoken as “love, image”</td>
+              <td>Icon is spoken as “love, image”</td>
+            </tr>
+            <tr>
+              <th scope="row">Orca with Firefox 42 on Ubuntu 14.04</th>
+              <td>Icon is spoken as “love, image”</td>
+              <td>Icon is spoken as “love image”</td>
+              <td>Icon is spelled as “l-o-v-e image”</td>
+            </tr>
+            <tr>
+              <th scope="row">VoiceOver Braille Display with Yandex 15 on OS X 10.9</th>
+              <td>Icon is not rendered</td>
+              <td>Icon is not rendered</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h2>Combined first rows and pass status in separate column</h2>
+        <p>Combine columns for AT, Browser, and OS. Makes more sense in tables mode (might be too verbose). Adds pass status as separate column.</p>
+
+        <h3>Results</h3>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">AT, Browser, and OS</th>
+              <th scope="col">Status</th>
+              <th scope="col">Expected Result</th>
+              <th scope="col">Actual Result</th>
+              <th scope="col">Caret navigation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">VoiceOver with Safari 9 on OS X 10.10</th>
+              <td><span class="pass">Passes</span></td>
+              <td>Icon is spoken as “love, image”</td>
+              <td>Icon is spoken as “love, image”</td>
+              <td>Icon is spoken as “love, image”</td>
+            </tr>
+            <tr>
+              <th scope="row">Orca with Firefox 42 on Ubuntu 14.04</th>
+              <td><span class="bug">Buggy</span></td>
+              <td>Icon is spoken as “love, image”</td>
+              <td>Icon is spoken as “love image”</td>
+              <td>Icon is spelled as “l-o-v-e image”</td>
+            </tr>
+            <tr>
+              <th scope="row">VoiceOver Braille Display with Yandex 15 on OS X 10.9</th>
+              <td><span class="fail">Fails</span></td>
+              <td>Icon is not rendered</td>
+              <td>Icon is not rendered</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </main>
+  </body>
+</html>
